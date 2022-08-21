@@ -3,10 +3,11 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
+const port=process.env.PORT;
 app.use(bodyParser.urlencoded({ extended: true }));
 const test = path.join(__dirname, "../public");
 app.use(express.static(path.join(__dirname, "../public")));
-app.listen(8000, () => {
+app.listen(port, () => {
     console.log("listening..");
 });
 app.post("/contactus.html", function (req, res) {
