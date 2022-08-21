@@ -11,7 +11,7 @@ app.listen(port, () => {
     console.log("listening..");
 });
 app.post("/contactus.html", function (req, res) {
-    mongoose.connect("mongodb+srv://aryan:12345@cluster0.drvmfrn.mongodb.net/FitnessWebsite?retryWrites=true&w=majority").then(() => {
+    mongoose.connect("mongodb+srv://aryan:12345@cluster0.drvmfrn.mongodb.net/FitnessWebsite?retryWrites=true&w=majority",{useNewUrlParser:true,useUnifiedTopology:true}).then(() => {
         console.log("connection successful...");
         const contactSchema = {
             name: String,
