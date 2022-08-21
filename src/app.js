@@ -10,7 +10,7 @@ app.listen(8000, () => {
     console.log("listening..");
 });
 app.post("/contactus.html", function (req, res) {
-    mongoose.connect("mongodb://localhost:27017/gymContact").then(() => {
+    mongoose.connect("mongodb+srv://aryan:12345@cluster0.drvmfrn.mongodb.net/FitnessWebsite?retryWrites=true&w=majority").then(() => {
         console.log("connection successful...");
         const contactSchema = {
             name: String,
@@ -45,7 +45,7 @@ app.post("/contactus.html", function (req, res) {
 })
 
 app.post("/joinForm.html", function (req, res) {
-    mongoose.connect("mongodb://localhost:27017/gymJoin").then(() => {
+    mongoose.connect("mongodb+srv://aryan:12345@cluster0.drvmfrn.mongodb.net/FitnessWebsite?retryWrites=true&w=majority").then(() => {
         console.log("connection successful...");
         const joinSchema = {
             name: String,
@@ -85,7 +85,7 @@ app.post("/joinForm.html", function (req, res) {
 })
 
 app.post("/trainerform.html", function (req, res) {
-    mongoose.connect("mongodb://localhost:27017/TrainerJoin").then(() => {
+    mongoose.connect("mongodb+srv://aryan:12345@cluster0.drvmfrn.mongodb.net/FitnessWebsite?retryWrites=true&w=majority").then(() => {
         console.log("connection successful...");
         const TrainerSchema = {
             name: String,
