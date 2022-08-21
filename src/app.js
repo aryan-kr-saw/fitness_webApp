@@ -11,7 +11,7 @@ app.listen(port, () => {
     console.log("listening..");
 });
 app.post("/contactus.html", function (req, res) {
-    mongoose.connect("mongodb+srv://aryan:12345@cluster0.drvmfrn.mongodb.net/FitnessWebsite?retryWrites=true&w=majority",{useNewUrlParser:true,useUnifiedTopology:true}).then(() => {
+    mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser:true,useUnifiedTopology:true}).then(() => {
         console.log("connection successful...");
         const contactSchema = {
             name: String,
@@ -46,7 +46,7 @@ app.post("/contactus.html", function (req, res) {
 })
 
 app.post("/joinForm.html", function (req, res) {
-    mongoose.connect("mongodb+srv://aryan:12345@cluster0.drvmfrn.mongodb.net/FitnessWebsite?retryWrites=true&w=majority").then(() => {
+    mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser:true,useUnifiedTopology:true}).then(() => {
         console.log("connection successful...");
         const joinSchema = {
             name: String,
@@ -86,7 +86,7 @@ app.post("/joinForm.html", function (req, res) {
 })
 
 app.post("/trainerform.html", function (req, res) {
-    mongoose.connect("mongodb+srv://aryan:12345@cluster0.drvmfrn.mongodb.net/FitnessWebsite?retryWrites=true&w=majority").then(() => {
+    mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser:true,useUnifiedTopology:true}).then(() => {
         console.log("connection successful...");
         const TrainerSchema = {
             name: String,
