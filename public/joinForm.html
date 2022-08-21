@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Form</title>
+    <link rel="stylesheet" href="cssFile/style.css">
+</head>
+
+<body>
+    <nav class="navbar background-nav h-nav-resp">
+        <div class="burger">
+            <div class="b-line"></div>
+            <div class="b-line"></div>
+            <div class="b-line"></div>
+        </div>
+        <ul class="nav-list o-class-resp">
+            <div class="logo"> <img src="images/logo.webp"></div>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+        <div class="rightNav o-class-resp">
+            <form action="https://www.google.com/search" method="get" target="_blank">
+                <input autocomplete="on" id="search" class="form-control search" name="q" placeholder="google search"
+                    required="required" type="text">
+                <button class="search-btn" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <main class="Background-2">
+        <div class="container">
+            <div class="headForm">Join Form</div>
+            <form method="POST" class="join-form">
+                <div>
+                    <label for="name" class="required">Full Name:</label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+                <div><label for="dob" class="required">Date of Birth:</label>
+                    <input type="date" name="date" id="dob" required></label>
+                </div>
+                <div>
+                    <label class="required">Gender:</label><input type="radio" value="male" id="male" class="cursor"
+                        name="gender" required>
+                    <label for="male" id="maleID" class="cursor">Male</label>
+                    <input type="radio" value="female" id="female" class="cursor" name="gender" required>
+                    <label for="female" id="femaleID" class="cursor">Female</label>
+                    <input type="radio" value="other" id="other" class="cursor" name="gender" required>
+                    <label for="other" id="otherID" class="cursor">Other</label>
+                </div>
+                <div><label for="bloodgroup" class="required">Blood Group:</label>
+                    <select id="bloodgroup" name="bGroup" required>
+                        <option name="bGroup" value="" selected disabled hidden>Select</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+                <div><label class="required">Opt for Service(s):</label><br><input type="checkbox" id="gym"
+                        class="cursor" name="services" value="gym">
+                    <label for="gym" value="gym" id="gymID" class="cursor">Gym</label><br>
+                    <input type="checkbox" id="yoga" class="cursor" name="services" value="yoga">
+                    <label for="yoga" id="yogaID" class="cursor">Yoga</label><br>
+                    <input type="checkbox" id="mentalFitness" class="cursor" name="services" value="mentalFitness">
+                    <label for="mentalFitness" id="mentalID" class="cursor">Mental Fitness</label><br>
+                </div>
+                <div><label for="adhar" class="required">Adhar No.</label><input type="text" name="adhar"
+                        pattern="[0-9]{12}" id="adhar" required>
+                </div>
+                <div><label for="phone" class="required">Mobile No.</label><input type="text" name="mobile"
+                        pattern="[0-9]{10}" id="phone" required>
+                </div>
+
+                <div> <label for="email" class="required">Email:</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div><label for="address">Adress:- </label><br><textarea name="address" cols="30" rows="8"
+                        id="address"></textarea></div>
+                <div class="submit-div">
+                    <button type="submit" class="submit-btn">Submit</button>
+                    <button class="submit-btn" type="reset">Reset</button>
+                </div>                     
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="address">
+            <p>Address:-</p>Chhatabad No. 5</p>
+            <p>Katrasgarh Dhanbad 828113</p>
+            <p>&#9742; 123-4567-89</p>
+        </div>
+        <p>All rights reserved.</p>
+        <p>&copy; www.aryanfitnessclub.com</p>
+    </footer>
+    <script src="jsFile/jscript.js"></script>
+</body>
+
+</html>
