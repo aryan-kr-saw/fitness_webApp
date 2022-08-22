@@ -10,27 +10,28 @@ app.use(express.static(path.join(__dirname, "../public")));
 app.listen(port, () => {
     console.log("listening..");
 });
+const contactSchema = {
+            cName: String,
+            cAge: Number,
+            cGender: String,
+            cLoc: String,
+            cEmail: String,
+            cPhone: Number,
+            cMessage: String
+        }
+        const Message = mongoose.model("Message", contactSchema);
 app.post("/contactus.html", function (req, res) {
     mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser:true,useUnifiedTopology:true}).then(() => {
         console.log("connection successful...");
-        const contactSchema = {
-            name: String,
-            age: Number,
-            gender: String,
-            loc: String,
-            email: String,
-            phone: Number,
-            message: String
-        }
-        const Message = mongoose.model("Message", contactSchema);
+        
         let newMessage = new Message({
-            name: req.body.name,
-            age: req.body.age,
-            gender: req.body.gender,
-            loc: req.body.loc,
-            email: req.body.email,
-            phone: req.body.phone,
-            message: req.body.message
+            cName: req.body.name,
+            cAge: req.body.age,
+            cGender: req.body.gender,
+            cLoc: req.body.loc,
+            cEmail: req.body.email,
+            cPhone: req.body.phone,
+            cMessage: req.body.message
 
         });
         
@@ -44,33 +45,34 @@ app.post("/contactus.html", function (req, res) {
     }).catch(err => { res.send("Unable to connect to database") });
 
 })
-
+const joinSchema = {
+            jName: String,
+            jDate:Date,
+            jAge: Number,
+            jGender: String,
+            jBloodGroup: String,
+            jServices:Array,
+            jAdhar:Number,
+            jMobile: Number,
+            jEmail: String,
+            jAddress: String
+        }
+        const JoinForm = mongoose.model("JoinForm", joinSchema);
 app.post("/joinForm.html", function (req, res) {
     mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser:true,useUnifiedTopology:true}).then(() => {
         console.log("connection successful...");
-        const joinSchema = {
-            name: String,
-            date:Date,
-            age: Number,
-            gender: String,
-            bloodGroup: String,
-            services:Array,
-            adhar:Number,
-            mobile: Number,
-            email: String,
-            address: String
-        }
-        const JoinForm = mongoose.model("JoinForm", joinSchema);
+        
         let newform = new JoinForm({
-            name: req.body.name,
-            date: req.body.date,
-            gender: req.body.gender,
-            bloodGroup: req.body.bGroup,
-            services:req.body.services,
-            adhar:req.body.adhar,
-            mobile:req.body.mobile,
-            email: req.body.email,
-            address: req.body.address,
+            jName: req.body.name,
+            jDate: req.body.date,
+            jAge: req.body.age,
+            jGender: req.body.gender,
+            jBloodGroup: req.body.bloodGroup,
+            jServices:req.body.services,
+            jAdhar:req.body.adhar,
+            jMobile:req.body.mobile,
+            jEmail: req.body.email,
+            jAddress: req.body.address,
 
         });
         
@@ -84,39 +86,39 @@ app.post("/joinForm.html", function (req, res) {
     }).catch(err => { res.send("Unable to connect to database") });
 
 })
-
+const TrainerSchema = {
+            tName: String,
+            tDate:Date,
+            tAge: Number,
+            tGender: String,
+            tBloodGroup: String,
+            tExperience:Number,
+            tDuration_Unit:String,
+            tExpert_in:Array,
+            tJoin_as:String,
+            tAdhar:Number,
+            tMobile: Number,
+            tEmail: String,
+            tAddress: String
+        }
+        const TrainerForm = mongoose.model("TrainerForm", TrainerSchema);
 app.post("/trainerform.html", function (req, res) {
     mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser:true,useUnifiedTopology:true}).then(() => {
         console.log("connection successful...");
-        const TrainerSchema = {
-            name: String,
-            date:Date,
-            age: Number,
-            gender: String,
-            bloodGroup: String,
-            Experience:Number,
-            Duration_Unit:String,
-            Expert_in:Array,
-            Join_as:String,
-            adhar:Number,
-            mobile: Number,
-            email: String,
-            address: String
-        }
-        const TrainerForm = mongoose.model("TrainerForm", TrainerSchema);
+        
         let newform = new TrainerForm({
-            name: req.body.name,
-            date: req.body.date,
-            gender: req.body.gender,
-            bloodGroup: req.body.bGroup,
-            Experience:req.body.expGroup,
-            Duration_Unit:req.body.durationGroup,
-            Expert_in:req.body.expertise,
-            Join_as:req.body.join,
-            adhar:req.body.adhar,
-            mobile:req.body.mobile,
-            email: req.body.email,
-            address: req.body.address,
+            tName: req.body.name,
+            tDate: req.body.date,
+            tGender: req.body.gender,
+            tBloodGroup: req.body.bGroup,
+            tExperience:req.body.expGroup,
+            tDuration_Unit:req.body.durationGroup,
+            tExpert_in:req.body.expertise,
+            tJoin_as:req.body.join,
+            tAdhar:req.body.adhar,
+            tMobile:req.body.mobile,
+            tEmail: req.body.email,
+            tAddress: req.body.address,
 
         });
         
