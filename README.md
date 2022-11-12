@@ -23,8 +23,8 @@ https://aryan-fitness-webapp.herokuapp.com/
  - Node Js
  - Mongo DB
 
-## Feedback
+## Feedback/Message
 
-If you have any feedback, please mail us at aryanksaw.official@gmail.com
+If you have any feedback/message, please mail me at aryanksaw.official@gmail.com
 
 
