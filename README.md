@@ -5,10 +5,6 @@ It is a Responsive fitness webApp for a particular Fitness Club which helps the 
 
 
 
-## Demo
-
-https://aryan-fitness-webapp.herokuapp.com/
-
 
 ## Frontend:
 
